@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect, type JSX } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import  { useState, useRef, useEffect, type JSX } from "react";
+import {  useNavigate } from "react-router-dom";
 
 export function Avatar(): JSX.Element {
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);

@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Inputbox } from "./Inputbox";
-import { useState, type ChangeEvent } from "react";
+import { useState } from "react";
 import type { SignupInput } from "@jaydeeppp/medium-blog";
 import { BackendUrl } from "../config";
 import axios from "axios";

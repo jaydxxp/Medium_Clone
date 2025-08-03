@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
 import { BackendUrl } from "../config";
-import { useParams } from "react-router-dom";
+
  export interface Blog{
     "title":string,
    "content":string,
