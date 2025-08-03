@@ -1,0 +1,1 @@
+export const BackendUrl="https://backend.jaydeepw-btech-iot.workers.dev/api/v1";

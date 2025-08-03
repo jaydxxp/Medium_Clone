@@ -38,7 +38,7 @@ export const Quote=()=>
     </div>
     
     if (!quote) return <div>No quote</div>;
-    return <div className='bg-slate-300 h-screen flex justify-center flex-col'>
+    return <div className='bg-slate-300 min-h-screen flex justify-center flex-col'>
     <div className='flex justify-center' >
         <h1 className="max-w-lg font-sans font-bold text-black text-2xl">"{quote.quote}"</h1>
     </div><br></br>

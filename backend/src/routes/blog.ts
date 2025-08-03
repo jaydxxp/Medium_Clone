@@ -45,7 +45,9 @@ blogRouter.post("/create", async (c) => {
       published: body.published,
     },
   });
-  return c.text("Created New Blog");
+  return c.json({
+    "blog":newBlog
+  })
   }
   catch(e)
   {
@@ -104,7 +106,14 @@ blogRouter.get("/read/:id", async (c) => {
     const GetOneBlog = await prisma.posts.findFirst({
       where: {
         id,
-      },
+      },select:{
+        id:true,
+        title:true,
+        content:true,
+        author:{
+          select:{name:true}
+        }
+      }
     });
     return c.json({
       GetOneBlog,
@@ -140,7 +149,14 @@ blogRouter.get("/feed", async (c) => {
     datasourceUrl: c.env.DATABASE_URL,
   }).$extends(withAccelerate());
   try {
-    const Feed = await prisma.posts.findMany();
+    const Feed = await prisma.posts.findMany({
+      select:{
+        title:true,content:true,id:true,
+        author:{select:{
+          name:true
+        }}
+      }
+    });
     return c.json({
       Feed,
     });

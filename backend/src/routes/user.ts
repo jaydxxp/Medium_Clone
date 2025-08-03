@@ -74,7 +74,7 @@ userRouter.post("/signin", async (c) => {
   const token = await sign({ id: user.id }, c.env.Secret);
   return c.json({
     message: "Successfully Logged In as:",
-    user,
+    token,user
   });
 });
 userRouter.get("/users", async (c) => {
